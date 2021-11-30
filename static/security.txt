@@ -1,0 +1,7 @@
+security.txt
+
+When security risks in web services are discovered by users they often lack the channels to disclose them properly. As a result, security issues may be left unreported.
+
+Security.txt defines a standard to help organizations define the process for users to disclose security vulnerabilities securely. Include a text file on your server at .well-known/security.txt with the relevant contact details.
+
+Check https://securitytxt.org/ for more details.

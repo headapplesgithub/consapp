@@ -1,0 +1,667 @@
+/* ---DEVELOPER NOTES---
+-Minimal CSS baseline/reset from developer Andy Bell
+-Critical CSS created manually with help from critcal CLI and Dev tools coverage tab
+-Use naming conventions from maintainablecss.com    
+-Styles are mobile first, layout and breakpoints are content first 
+  (image breakpoints are based on difference in file sizes via responsivebreakpoints.com)
+-Fonts manually subset using Pyft Font Tools as per Zach Leatherman and with 2 stage loading
+
+ */
+
+  /*--FONT LOADING--*/
+
+@font-face {
+  font-family: firasansbold;
+  src: url(/fonts/firasansboldsuball.woff2) format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: firasansregular;
+  src: url(/fonts/firasansregularsuball.woff2) format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/*-- FONT VARIABLES --*/
+:root {
+	 font-size: 1.1rem;
+ --display-font: firasansbold;
+ --body-font: firasansregular;
+}   
+
+/* --TYPOGRAPHY-- */
+
+:root @supports (font-size-adjust: 1;) {
+    article {
+        font-size-adjust: 0.5;
+    }
+}
+
+
+/* --- COLOURS and Palettes ---
+ including Dark Theme and prefers Dark theme and for toggle --- */
+
+ /* Dark Theme */
+
+ /* Palette 1 AE Orange Blue 
+
+   :root {
+ 	--primary-colour:#F37021;
+	--accent-colour:#39CC46;
+  --neutral-colourOne:#07B9ED;
+	--neutral-colourTwo:#C7E7FF; 
+  --neutral-colourThree:#1C3F94;
+   }
+
+  */ 
+
+ /* Palette 2 AE Green Orange 
+
+ :root {
+  --primary-colour:#F1552A;
+ --accent-colour:#8BC13F;
+ --neutral-colourOne:#ECECEC;
+ --neutral-colourTwo: rgba(182, 182, 219, 0.705); 
+ --neutral-colourThree: hsla(60, 12%, 68%, 1);
+  }
+
+ */ 
+
+/* Palette 3 AE Yellow Blue 
+
+:root {
+  --primary-colour:#ff652f;
+ --accent-colour:#747474;
+ --neutral-colourOne:#e9e0e0ee;
+ --neutral-colourTwo: rgb(75, 69, 69); 
+ --neutral-colourThree: rgb(102, 98, 88);
+  }
+
+ */
+
+/* Palette 4 College Green Purple */
+
+:root {
+  --primary-colour:#009F9B;
+ --accent-colour:#9B0D39;
+ --neutral-colourOne:#f0f0f0;
+ --neutral-colourTwo: hsla(26, 100%, 95%, 1); 
+ --neutral-colourThree: rgb(81, 77, 87);
+  }
+
+
+
+/* Palette 
+
+:root {
+  --primary-colour:#15DB95;
+ --accent-colour:#E4C580;
+ --neutral-colourOne:#07B9ED;
+ --neutral-colourTwo: hsla(26, 100%, 95%, 1); 
+ --neutral-colourThree: hsla(60, 12%, 68%, 1);
+  }
+
+  */
+
+  /* Palette 
+
+  :root {
+    --primary-colour:#15DB95;
+   --accent-colour:#E4C580;
+   --neutral-colourOne:#07B9ED;
+   --neutral-colourTwo: hsla(26, 100%, 95%, 1); 
+   --neutral-colourThree: hsla(60, 12%, 68%, 1);
+    }
+ 
+    */
+
+
+/* --CSS RESET: mininmal reset based on Developer Andy B--*/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+html,
+body {
+	padding: 0;
+	}
+
+/* Set core body defaults */
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+textarea,
+select {
+  font: inherit;
+}  
+
+/* Remove all animations and transitions for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --HIDDEN utility classes --*/
+
+.hidden {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+.skip-link {
+  background: #e77e23;
+  height: 30px;
+  left: 50%;
+  padding: 8px;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+}
+
+.skip-link:focus {
+  transform: translateY(0%);
+}
+
+
+/*--TYPOGRAPHY--*/
+
+h1 {
+font-family: var(--display-font); 
+font-size: 2.5rem;
+line-height: calc(1ex / 0.42);
+text-align: left;
+margin: calc(1ex / 0.42) 0;
+color: var(--neutral-colourThree);
+}
+
+h2 {
+  font-family: var(--body-font);
+  font-size: 2rem;
+  line-height: calc(1ex / 0.42);
+  margin: calc(1ex / 0.42) 0;
+  color: var(--neutral-colourThree);
+}
+
+h3 {
+  font-family: var(--body-font);
+}
+
+p {
+ font-family: var(--body-font);
+ font-size: 1rem;
+ width: 60ch;
+ max-width: 100%;
+ line-height: calc(1ex / 0.32);
+ text-align: left;
+ line-height: calc(1ex / 0.32);
+ margin: calc(1ex / 0.32) 0;
+ text-rendering: optimizeLegibility;
+ color: darkslategray;
+}
+
+
+@media screen and (max-width: 600px) {
+  p {
+    width: 35ch;
+  }
+}
+
+/*--COLOURS--*/
+body {
+  background: var(--neutral-colourOne);
+  }
+
+
+/* ---LAYOUT--- */
+
+.full-height {
+  height: 100vh;
+  background: var(--background-colour);
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stacked-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainGrid {
+height: 100vh;
+display: grid;
+grid-template-rows: auto 1fr;
+grid-template-columns: 1fr;
+grid-template-areas: 
+  'header'
+  'main';
+}
+
+@media screen and (min-width: 600px) {
+ .mainGrid {
+ display: grid;
+ grid-template-rows: auto auto 1fr;
+ grid-template-columns: 1fr;
+ grid-template-areas: 
+   "header"
+    "navlarge"
+    "main";
+ }
+}
+
+.header {
+grid-area: header;
+display: flex;
+justify-content: center;
+align-items: center;
+background: var(--background-colour);
+}
+
+main {
+ grid-area: main;
+ overflow: auto;
+ scroll-snap-type: y proximity;
+ background: var(--background-colour);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ }
+
+ .navLarge {
+   grid-area: navlarge;
+   padding: 1rem;
+ }
+
+ @media screen and (max-width: 599px) {
+  .navLarge {
+   display: none; 
+  }
+  }
+  
+  .navLarge-navList {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navLarge-navLink {
+   color: var(--neutral-colourThree); 
+  }
+
+ .full-snap {
+   scroll-snap-align: start;
+}
+
+ 
+.header-logo {
+ font-size: 1rem;
+ margin-left: auto;
+ padding: 0;
+ margin-top: 0;
+ color: var(--accent-colour);
+}
+
+@media screen and (min-width: 600px) {
+ .header-logo {
+  width: 25vw;
+}
+}
+
+@media screen and (min-width: 1000px) {
+ .header-logo {
+  width: 20vw;
+}
+}
+
+
+ 
+
+/*.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: var(--background-colour);
+  visibility: hidden;
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-transition: -webkit-transform 0.6s ease-in-out, visibility 0s 0.6s;
+	transition: transform 0.6s ease-in-out, visibility 0s 0.6s;
+} 
+
+.overlay-open {
+  visibility: visible;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	-webkit-transition: -webkit-transform 0.6s ease-in-out;
+	transition: transform 0.6s ease-in-out;  
+} */
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: var(--neutral-colourOne);
+  visibility: hidden;
+	opacity: 0;
+} 
+.overlay-open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s;  
+} 
+
+/*--SVG Hamburger--*/
+
+.hamburger-icon {
+ 	fill: none;
+	stroke-width: 7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+  cursor: pointer;
+  stroke: var(--accent-colour); 
+  opacity: .95;
+}
+
+
+.hamburger {
+position: fixed; 
+width: 3rem;
+top: 0;
+left: 0;
+z-index: 100;
+}
+
+@media screen and (min-width: 599px) {
+ .hamburger {
+  display: none; 
+ }
+}
+
+
+
+.overlayNav {
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+
+
+}
+
+.overlayNav-navList {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlayNav-navItem {
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+.overlayNav-link {
+color: var(--neutral-colourTwo);  
+}
+
+.overlayNav-link:hover,
+.overlayNav-link:focus {
+  color: red;
+}
+
+.one {
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/*--IMAGES--*/
+
+.aspectRatio-wrapperOuter {
+  height: 0;
+  overflow: hidden;
+  padding-top: 591.44px / 1127.34px * 100%;
+  background: white;
+  position: relative;
+}
+.aspectRatio-wrapperInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+picture>img {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  picture>img {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  picture>img {
+    padding: 1.4rem;
+  }
+}
+
+
+/*-- SPACING & VERTICAL RYTHMN --*/
+/*
+.space-small {
+}
+
+.space-medium {
+}
+
+.space-large {
+}
+*/
+
+
+/* --- LINKS --- */
+
+a[href],
+a[href]:visited {
+	color: ;
+}
+
+a[href]:not(:hover) {
+	text-decoration: none;
+}
+
+
+
+/*--- COMPONENTS, PAGES & VIEWS --- */
+
+
+/* CONTACT FORM */
+
+/* 
+form {
+  display: grid;
+	padding: 2em 0;
+}
+
+form label {
+  display: none;
+}
+
+
+input,
+textarea {
+	border: 1px solid black;
+} 
+
+*/
+
+/*  BUTTONS  */
+
+/* button {
+	border: 1px solid var(--primary);
+	background-color: var(--primary);
+	color: var(--secondary);
+	cursor: pointer;
+} */
+
+ button {
+  border: none;
+  margin: 0;
+  padding: 15px 30px;
+  font-family: var(--body-font); 
+  font-size: 1.5rem;
+  line-height: 1;  
+  border-radius: 10px;
+}
+
+.large-green-button {
+  background: var(--primary-colour);
+}
+
+.inverse-button {
+  background: var(--neutral-colourOne);
+  border: 1px solid var(--neutral-colourThree);
+  color: var(--primary-colour);
+  margin: 1rem;
+}
+
+.neu-square {
+width:70%; 
+height: 70%;
+border-radius: 50px;
+background: linear-gradient(145deg, #cacaca, #f0f0f0);
+box-shadow:  14px 14px 28px #bebebe,
+             -14px -14px 28px #ffffff;
+padding: 1rem;
+}
+
+/* Responsive iFrame */
+
+  @media (max-width: 550px) {
+    .big-container {
+        display: none;
+    }
+ }
+ @media (min-width: 550px) {
+    .small-container {
+        display: none;
+    }
+ }
+ /* Responsive iFrame */
+ .responsive-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+ }
+ .responsive-iframe-container iframe,   
+ .vresponsive-iframe-container object,  
+ .vresponsive-iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ }
+
+
+
+
+
+
+
+ 

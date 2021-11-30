@@ -1,0 +1,210 @@
+stackbitVersion: ~0.3.0
+ssgName: hugo
+publishDir: public
+dataDir: data
+pagesDir: content
+assets:
+  referenceType: static
+  staticDir: static
+  uploadDir: assets
+  publicPath: /
+models:
+  page_1:
+    type: page
+    label: Page 1
+    match: '**/*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: string
+        name: sort_by
+        label: Sort By
+      - type: number
+        name: weight
+        label: Weight
+        subtype: int
+      - type: string
+        name: template
+        label: Template
+      - type: string
+        name: page_template
+        label: Page Template
+      - type: boolean
+        name: render
+        label: Render
+      - type: object
+        name: extra
+        label: Extra
+        fields:
+          - type: string
+            name: twittercard
+            label: Twittercard
+          - type: string
+            name: twittersite
+            label: Twittersite
+          - type: string
+            name: twitterdescription
+            label: Twitterdescription
+          - type: string
+            name: twittertitle
+            label: Twittertitle
+          - type: string
+            name: twitterurl
+            label: Twitterurl
+          - type: string
+            name: twitterimage
+            label: Twitterimage
+          - type: string
+            name: twitterimagealttext
+            label: Twitterimagealttext
+          - type: string
+            name: oglocale
+            label: Oglocale
+          - type: string
+            name: ogtype
+            label: Ogtype
+          - type: string
+            name: ogsite_name
+            label: Ogsite Name
+          - type: string
+            name: ogtitle
+            label: Ogtitle
+          - type: string
+            name: ogdescription
+            label: Ogdescription
+          - type: string
+            name: ogurl
+            label: Ogurl
+          - type: string
+            name: ogimage
+            label: Ogimage
+          - type: string
+            name: ogimage_width
+            label: Ogimage Width
+          - type: string
+            name: ogimage_height
+            label: Ogimage Height
+          - type: string
+            name: heading
+            label: Heading
+          - type: string
+            name: tagline
+            label: Tagline
+          - type: string
+            name: itemtype
+            label: Itemtype
+          - type: string
+            name: intro
+            label: Intro
+          - type: string
+            name: section1heading
+            label: Section 1 Heading
+          - type: string
+            name: section2heading
+            label: Section 2 Heading
+          - type: string
+            name: section2text
+            label: Section 2 Text
+          - type: string
+            name: quotecardtitle
+            label: Quotecardtitle
+          - type: string
+            name: quote
+            label: Quote
+          - type: string
+            name: tabtitle
+            label: Tabtitle
+          - type: string
+            name: metadescription
+            label: Metadescription
+          - type: string
+            name: paragraph1
+            label: Paragraph 1
+          - type: string
+            name: linktoprivacypolicy
+            label: Linktoprivacypolicy
+          - type: string
+            name: paragraph2
+            label: Paragraph 2
+          - type: string
+            name: email
+            label: Email
+          - type: string
+            name: downloadlink
+            label: Downloadlink
+          - type: string
+            name: downloadfilename
+            label: Downloadfilename
+          - type: string
+            name: downloadlinktext
+            label: Downloadlinktext
+          - type: string
+            name: years
+            label: Years
+          - type: string
+            name: term1name
+            label: Term 1 Name
+          - type: string
+            name: term1line1
+            label: Term 1 Line 1
+          - type: string
+            name: term1line2
+            label: Term 1 Line 2
+          - type: string
+            name: term1line3
+            label: Term 1 Line 3
+          - type: string
+            name: term1line4
+            label: Term 1 Line 4
+          - type: string
+            name: term1line5
+            label: Term 1 Line 5
+          - type: string
+            name: term1line6
+            label: Term 1 Line 6
+          - type: string
+            name: term1line7
+            label: Term 1 Line 7
+          - type: string
+            name: term2name
+            label: Term 2 Name
+          - type: string
+            name: term2line1
+            label: Term 2 Line 1
+          - type: string
+            name: term2line2
+            label: Term 2 Line 2
+          - type: string
+            name: term2line3
+            label: Term 2 Line 3
+          - type: string
+            name: term2line4
+            label: Term 2 Line 4
+          - type: string
+            name: term2line5
+            label: Term 2 Line 5
+          - type: string
+            name: term3name
+            label: Term 3 Name
+          - type: string
+            name: term3line1
+            label: Term 3 Line 1
+          - type: string
+            name: term3line2
+            label: Term 3 Line 2
+          - type: string
+            name: term3line3
+            label: Term 3 Line 3
+          - type: string
+            name: term3line4
+            label: Term 3 Line 4
+          - type: string
+            name: term3line5
+            label: Term 3 Line 5

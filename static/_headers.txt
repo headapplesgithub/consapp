@@ -1,0 +1,2 @@
+https://:githubconsapp.pages.dev/*
+  X-Robots-Tag: noindex
